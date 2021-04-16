@@ -27,11 +27,35 @@ arvore inserir (arvore raiz, int valor) {
     }
 }
 
+arvore remover (arvore raiz, int valor) {
+    if(raiz == NULL)
+        return NULL;
+
+    if(raiz->valor == valor) {
+        //caso 1 - zero filho
+          if(raiz->esq == NULL && raiz->dir == NULL) {
+                //free
+                return NULL;
+            }
+        //caso 2
+
+        //caso 3
+        //fazer uma função que retorna o valor do maior
+    } else {
+        if(valor < raiz->valor) {
+            raiz->esq = remover(raiz->esq, valor);
+        } else {
+            raiz->dir = remover(raiz->dir, valor);
+        }
+    }
+}
+
+
 
 void preorder(arvore raiz) {
     if(raiz != NULL) {
            printf("[%d]", raiz->valor);
            preorder(raiz->esq);
            preorder(raiz->dir);
-    }
+    } 
 }
